@@ -5,14 +5,7 @@ import { Platform, StyleSheet } from "react-native";
 import Colors from "../Constants/colors";
 
 const CustomHeaderButton = (props) => {
-  return (
-    <HeaderButton
-      {...props}
-      IconComponent={Ionicons}
-      iconSize={23}
-      color={Platform.OS === "ios" ? Colors.primary : Colors.accentColor}
-    />
-  );
+  return <HeaderButton {...props} IconComponent={Ionicons} iconSize={23} />;
 };
 
 const styles = StyleSheet.create({});

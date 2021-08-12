@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
   Dimensions,
 } from "react-native";
+import CustomText from "../Components/CustomText";
 
 const MealItem = (props) => {
   const [widthDim, setAvailableWidthDim] = useState(
@@ -37,16 +37,16 @@ const MealItem = (props) => {
             resizeMode="cover"
           >
             <View style={styles.titleContainer}>
-              <Text style={styles.title} numberOfLines={2}>
+              <CustomText style={styles.title} numberOfLines={2}>
                 {props.item.title}
-              </Text>
+              </CustomText>
             </View>
           </ImageBackground>
         </View>
         <View style={styles.footer}>
-          <Text>{props.item.duration} min</Text>
-          <Text>{props.item.complexity}</Text>
-          <Text>{props.item.affordability}</Text>
+          <CustomText>{props.item.duration} min</CustomText>
+          <CustomText>{props.item.complexity}</CustomText>
+          <CustomText>{props.item.affordability}</CustomText>
         </View>
       </View>
     </TouchableOpacity>
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "open-sans-bold",
+
     color: "#fff",
     fontSize: 17,
     textAlign: "left",
